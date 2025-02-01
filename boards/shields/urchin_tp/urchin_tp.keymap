@@ -116,7 +116,7 @@
 			compatible = "zmk,input-listener";
 			device = <&m_v>;
 			scroll {
-					layers = <MSC>;
+					layers = <MOUSE_TP>;
 					inherit;
 					input-processors = <&xy_transf (INPUT_TRANSFORM_Y_INVERT)>
 										, <&xy_scaler 1 75>, <&to_wheel>;

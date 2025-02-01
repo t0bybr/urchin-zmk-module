@@ -72,7 +72,7 @@
 	uart0_ps2_default: uart0_ps2_default {
 		group1 {
 			psels = MOUSE_PS2_PIN_UNEXPOSED_TX,
-							MOUSE_PS2_PIN_SDA_PINCTRL;
+					MOUSE_PS2_PIN_SCL_PRO_MICRO;
 		};
 	};
 
@@ -80,7 +80,7 @@
 	uart0_ps2_sleep: uart0_ps2_sleep {
 		group1 {
 			psels = MOUSE_PS2_PIN_UNEXPOSED_TX,
-							MOUSE_PS2_PIN_SDA_PINCTRL;
+					MOUSE_PS2_PIN_SCL_PRO_MICRO;
 			low-power-enable;
 		};
 	};
@@ -96,7 +96,7 @@
 	uart0_ps2_off: uart0_ps2_off {
 		group1 {
 			psels = MOUSE_PS2_PIN_UNEXPOSED_TX,
-							MOUSE_PS2_PIN_UNEXPOSED_RX;
+					MOUSE_PS2_PIN_UNEXPOSED_RX;
 		};
 	};
 };

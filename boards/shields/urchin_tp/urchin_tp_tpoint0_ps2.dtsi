@@ -4,19 +4,21 @@
  * SPDX-License-Identifier: MIT
  */
 
+
+
+// #define MOUSE_PS2_PIN_SCL_PRO_MICRO <&pro_micro 16 GPIO_ACTIVE_HIGH>
+// #define MOUSE_PS2_PIN_SDA_PRO_MICRO <&pro_micro 10 GPIO_ACTIVE_HIGH>
+// #define MOUSE_PS2_PIN_RST_PRO_MICRO <&pro_micro 9 GPIO_ACTIVE_HIGH>
+// #define MOUSE_PS2_PIN_SDA_PINCTRL <NRF_PSEL(UART_RX, 0, 9)>
 #define MOUSE_PS2_PIN_SCL_PRO_MICRO <&pro_micro 2 GPIO_ACTIVE_HIGH>
 #define MOUSE_PS2_PIN_SDA_PRO_MICRO <&pro_micro 0 GPIO_ACTIVE_HIGH>
-#define MOUSE_PS2_PIN_RST_PRO_MICRO <&pro_micro 1 GPIO_ACTIVE_HIGH>
-#define MOUSE_PS2_PIN_SDA_PINCTRL <NRF_PSEL(UART_RX, 0, 9)>
-// #define MOUSE_PS2_PIN_SCL_PRO_MICRO <&gpio0 2 GPIO_ACTIVE_HIGH>
-// #define MOUSE_PS2_PIN_SDA_PRO_MICRO <&gpio0 0 GPIO_ACTIVE_HIGH>
-// #define MOUSE_PS2_PIN_RST_PRO_MICRO <&gpio1 1 GPIO_ACTIVE_HIGH>
-// #define MOUSE_PS2_PIN_SDA_PINCTRL <NRF_PSEL(UART_RX, 0, 4)>
+#define MOUSE_PS2_PIN_RST_PRO_MICRO <&gpio1 1 GPIO_ACTIVE_HIGH>
+// #define MOUSE_PS2_PIN_SDA_PINCTRL <NRF_PSEL(UART_RX, 0, 8)>
 
 #define MOUSE_PS2_UART_BAUD_RATE <14400>
 #define MOUSE_PS2_PIN_UNEXPOSED_TX <NRF_PSEL(UART_TX, 0, 27)>
-// #define MOUSE_PS2_PIN_UNEXPOSED_RX <NRF_PSEL(UART_RX, 0, 28)>
-#define MOUSE_PS2_PIN_UNEXPOSED_RX <NRF_PSEL(UART_RX, 1, 12)>
+#define MOUSE_PS2_PIN_UNEXPOSED_RX <NRF_PSEL(UART_RX, 0, 28)>
+// #define MOUSE_PS2_PIN_UNEXPOSED_RX <NRF_PSEL(UART_RX, 1, 12)>
 
 &gpiote { interrupts = < 6 0 >; };
 &clock { interrupts = < 0 3 >; };
@@ -118,27 +120,25 @@
 };
 
 / {
-    tpoint0: tpoint0 {
-				status = "disabled";
+    tpoint_device: tpoint_device {
+		status = "disabled";
         compatible = "zmk,input-mouse-ps2";
-	      ps2-device = <&uart_ps2>;
-#ifdef MOUSE_PS2_PIN_RST_PRO_MICRO
-        rst-gpios = MOUSE_PS2_PIN_RST_PRO_MICRO;
-#endif
-    };
+		ps2-device = <&uart_ps2>;
+		#ifdef MOUSE_PS2_PIN_RST_PRO_MICRO
+			rst-gpios = MOUSE_PS2_PIN_RST_PRO_MICRO;
+		#endif
+		};
 };
 
 &uart0 {
-    status = "okay";
+	status = "okay";
 };
 &uart_ps2 {
-    status = "okay";
+	status = "okay";
 };
-&tpoint0 {
-    status = "okay";
-		disable-clicking;
-		tp-sensitivity = <128>;
-		tp-x-invert;
-		tp-y-invert;
-		sampling-rate = <80>;
+&tpoint_device {
+	status = "okay";
+	disable-clicking;
+	tp-sensitivity = <128>;
+	sampling-rate = <80>;
 };

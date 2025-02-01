@@ -1,11 +1,12 @@
 file_format: "1"
 id: urchin_tp
-name: urchin_tp
+name: urchin TP
 type: shield
 url: https://github.com/duckyb/urchin
 requires: [pro_micro]
 features:
   - keys
+  - pointer
 siblings:
   - urchin_tp_left
   - urchin_tp_right

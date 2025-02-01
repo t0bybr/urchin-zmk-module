@@ -5,7 +5,7 @@
  */
 
 #include "urchin_tp.dtsi"
-#include "colubris_tpoint0_ps2.dtsi"
+#include "urchin_tp_tpoint0_ps2.dtsi"
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 

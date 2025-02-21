@@ -202,7 +202,7 @@
 		default_layer {
 			bindings = <
 				AS(Q)			AS(W)			AS(F)           AS(P)           AS(G)                    AS(J)           	AS(L)      			AS(U)            AS(Y)			AS(SQT)
-				AS(P)			AS(R)			AS(S)     		AS(T)      	  	AS(D)                    AS(H)            	AS(N)           	AS(E)     		 AS(I)			AS(O)
+				AS(A)			AS(R)			AS(S)     		AS(T)      	  	AS(D)                    AS(H)            	AS(N)           	AS(E)     		 AS(I)			AS(O)
 				AS(Z)			AS(X)			AS(C)	        AS(V)           AS(B)               	 AS(K)       		AS(M)          		AS(COMMA)        AS(DOT)		AS(SEMI)
 																&td0	     	&kp LSHFT			 	 &kp SPACE	 		&td1
 			>;
